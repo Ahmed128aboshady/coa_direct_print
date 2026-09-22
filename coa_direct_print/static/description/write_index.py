@@ -1,0 +1,794 @@
+
+# -*- coding: utf-8 -*-
+import os
+
+OUTPUT = r'C:\Users\user\.gemini\antigravity\scratch\coa_addons_repo\coa_direct_print\static\description\index.html'
+
+HTML = r'''<div style="font-family:'Inter',Arial,sans-serif;font-size:15px;color:#1a2533;margin:0;padding:0;line-height:1.6;background:#fff;">
+
+<!-- =====================================================================
+     HERO HEADER
+     ===================================================================== -->
+<div style="background:linear-gradient(135deg,#041F33 0%,#063153 55%,#0F5586 100%);padding:64px 40px 0 40px;position:relative;overflow:hidden;">
+
+  <!-- Decorative blobs -->
+  <div style="position:absolute;top:-80px;right:-80px;width:340px;height:340px;background:rgba(15,85,134,0.25);border-radius:50%;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:60px;left:-60px;width:220px;height:220px;background:rgba(6,49,83,0.35);border-radius:50%;pointer-events:none;"></div>
+
+  <!-- Top bar: logo pill + version badge -->
+  <div style="display:flex;align-items:center;gap:16px;margin-bottom:36px;flex-wrap:wrap;">
+    <div style="background:rgba(255,255,255,0.10);border:1.5px solid rgba(255,255,255,0.18);border-radius:50px;padding:8px 20px 8px 12px;display:flex;align-items:center;gap:12px;">
+      <img src="coa_logo.jpg" alt="COA Logo" style="height:38px;width:38px;object-fit:contain;border-radius:50%;background:#fff;padding:3px;" />
+      <span style="color:#E7EEF3;font-size:14px;font-weight:700;letter-spacing:0.04em;">Community of Accountants · COA-Egypt</span>
+    </div>
+    <div style="background:rgba(22,163,74,0.18);border:1.5px solid rgba(22,163,74,0.55);border-radius:50px;padding:7px 18px;display:flex;align-items:center;gap:8px;">
+      <div style="width:9px;height:9px;background:#22c55e;border-radius:50%;box-shadow:0 0 8px #22c55e;"></div>
+      <span style="color:#86efac;font-size:13px;font-weight:700;letter-spacing:0.05em;">Odoo 19 · 18 · 17 Ready</span>
+    </div>
+  </div>
+
+  <!-- Headline -->
+  <div style="max-width:760px;margin-bottom:18px;">
+    <div style="display:inline-block;background:rgba(140,29,34,0.28);border:1px solid rgba(230,27,33,0.45);border-radius:6px;padding:4px 14px;margin-bottom:16px;">
+      <span style="color:#fca5a5;font-size:12px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;">Print Automation · Direct Browser Print</span>
+    </div>
+    <h1 style="color:#ffffff;font-size:42px;font-weight:800;margin:0 0 14px 0;line-height:1.18;letter-spacing:-0.01em;">
+      Direct Print &mdash; One Click,<br>
+      <span style="color:#6E93B0;">Instant Print Dialog</span>
+    </h1>
+    <p style="color:#b0c8e0;font-size:17px;margin:0 0 32px 0;max-width:660px;line-height:1.65;">
+      Eliminate the download-then-open-then-print friction. COA Direct Print adds a native browser
+      print dialog directly to Sale Orders, Customer Invoices, and Customer Account Statements &mdash;
+      no Accounting access required for Sales users, works on Community <em>and</em> Enterprise.
+    </p>
+  </div>
+
+  <!-- 4 metric cards -->
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:44px;">
+    <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:22px 28px;flex:1;min-width:170px;text-align:center;">
+      <div style="font-size:36px;font-weight:800;color:#fff;line-height:1;">3</div>
+      <div style="color:#6E93B0;font-size:13px;font-weight:600;margin-top:6px;">Document Types</div>
+      <div style="color:#94a3b8;font-size:12px;margin-top:4px;">SO · Invoice · Statement</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:22px 28px;flex:1;min-width:170px;text-align:center;">
+      <div style="font-size:36px;font-weight:800;color:#22c55e;line-height:1;">0</div>
+      <div style="color:#6E93B0;font-size:13px;font-weight:600;margin-top:6px;">Download Steps</div>
+      <div style="color:#94a3b8;font-size:12px;margin-top:4px;">Print dialog opens instantly</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:22px 28px;flex:1;min-width:170px;text-align:center;">
+      <div style="font-size:36px;font-weight:800;color:#fbbf24;line-height:1;">&#10003;</div>
+      <div style="color:#6E93B0;font-size:13px;font-weight:600;margin-top:6px;">No Accounting Access</div>
+      <div style="color:#94a3b8;font-size:12px;margin-top:4px;">Sales users print invoices freely</div>
+    </div>
+    <div style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.14);border-radius:14px;padding:22px 28px;flex:1;min-width:170px;text-align:center;">
+      <div style="font-size:36px;font-weight:800;color:#a78bfa;line-height:1;">2</div>
+      <div style="color:#6E93B0;font-size:13px;font-weight:600;margin-top:6px;">Editions Supported</div>
+      <div style="color:#94a3b8;font-size:12px;margin-top:4px;">Community &amp; Enterprise</div>
+    </div>
+  </div>
+
+  <!-- Mac browser window mockup -->
+  <div style="max-width:900px;margin:0 auto 0 0;">
+    <div style="background:#1e293b;border-radius:14px 14px 0 0;padding:12px 18px;display:flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,0.10);border-bottom:none;">
+      <div style="width:13px;height:13px;background:#ef4444;border-radius:50%;"></div>
+      <div style="width:13px;height:13px;background:#f59e0b;border-radius:50%;"></div>
+      <div style="width:13px;height:13px;background:#22c55e;border-radius:50%;"></div>
+      <div style="flex:1;background:rgba(255,255,255,0.07);border-radius:6px;padding:5px 12px;margin-left:10px;">
+        <span style="color:#64748b;font-size:12px;">&#128274; odoo.yourdomain.com/odoo/sales</span>
+      </div>
+    </div>
+    <div style="background:#f1f5f9;border-radius:0 0 14px 14px;overflow:hidden;border:1px solid rgba(255,255,255,0.10);border-top:none;">
+      <img src="01_sale_order_print_buttons.png" alt="Sale Order - Direct Print Buttons" style="width:100%;display:block;object-fit:cover;" />
+    </div>
+  </div>
+
+  <!-- Feature tags row -->
+  <div style="display:flex;flex-wrap:wrap;gap:10px;padding:24px 0 32px 0;">
+    <span style="background:rgba(110,147,176,0.18);color:#93c5fd;border:1px solid rgba(110,147,176,0.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;">&#9889; Direct Browser Print</span>
+    <span style="background:rgba(110,147,176,0.18);color:#93c5fd;border:1px solid rgba(110,147,176,0.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;">&#128196; Sale Order Print</span>
+    <span style="background:rgba(110,147,176,0.18);color:#93c5fd;border:1px solid rgba(110,147,176,0.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;">&#129534; Invoice Direct Print</span>
+    <span style="background:rgba(110,147,176,0.18);color:#93c5fd;border:1px solid rgba(110,147,176,0.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;">&#128202; Customer Statement</span>
+    <span style="background:rgba(110,147,176,0.18);color:#93c5fd;border:1px solid rgba(110,147,176,0.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;">&#128272; No Accounting Access</span>
+    <span style="background:rgba(110,147,176,0.18);color:#93c5fd;border:1px solid rgba(110,147,176,0.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;">&#9881; QWeb Custom Report</span>
+    <span style="background:rgba(110,147,176,0.18);color:#93c5fd;border:1px solid rgba(110,147,176,0.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;">&#127758; Community &amp; Enterprise</span>
+    <span style="background:rgba(110,147,176,0.18);color:#93c5fd;border:1px solid rgba(110,147,176,0.35);border-radius:20px;padding:5px 14px;font-size:12px;font-weight:600;">&#128274; OPL-1 License</span>
+  </div>
+</div>
+
+<!-- =====================================================================
+     SECTION 2 — PROBLEM vs SOLUTION
+     ===================================================================== -->
+<div style="background:#f8fafc;padding:72px 40px;">
+  <div style="text-align:center;margin-bottom:52px;">
+    <div style="display:inline-block;background:#fef2f2;border:1px solid #fecaca;border-radius:6px;padding:4px 14px;margin-bottom:14px;">
+      <span style="color:#b91c1c;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">The Problem &amp; The Fix</span>
+    </div>
+    <h2 style="color:#041F33;font-size:32px;font-weight:800;margin:0 0 12px 0;">Why Standard Odoo Print Frustrates Users</h2>
+    <p style="color:#64748b;font-size:16px;max-width:620px;margin:0 auto;">Every extra click costs time. Every workaround risks errors. COA Direct Print removes the friction entirely.</p>
+  </div>
+
+  <div style="display:flex;gap:28px;flex-wrap:wrap;max-width:1100px;margin:0 auto;">
+
+    <!-- WITHOUT card -->
+    <div style="flex:1;min-width:300px;background:#fff;border:2px solid #fecaca;border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(220,38,38,0.08);">
+      <div style="background:#fef2f2;padding:20px 28px;border-bottom:2px solid #fecaca;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;background:#fee2e2;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;">&#10060;</div>
+          <div>
+            <div style="font-size:14px;font-weight:800;color:#b91c1c;text-transform:uppercase;letter-spacing:0.06em;">Without COA Direct Print</div>
+            <div style="font-size:12px;color:#ef4444;">Standard Odoo behavior</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:28px;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#fff5f5;border-radius:10px;border-left:4px solid #ef4444;">
+            <div style="font-size:20px;flex-shrink:0;">&#128229;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Download PDF First</div>
+              <div style="color:#64748b;font-size:13px;">System generates &amp; downloads a PDF file to your computer.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#fff5f5;border-radius:10px;border-left:4px solid #ef4444;">
+            <div style="font-size:20px;flex-shrink:0;">&#128194;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Navigate to Downloads Folder</div>
+              <div style="color:#64748b;font-size:13px;">User must find and open the downloaded file manually.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#fff5f5;border-radius:10px;border-left:4px solid #ef4444;">
+            <div style="font-size:20px;flex-shrink:0;">&#128065;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Open PDF in Viewer</div>
+              <div style="color:#64748b;font-size:13px;">A separate application or browser tab opens the file.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#fff5f5;border-radius:10px;border-left:4px solid #ef4444;">
+            <div style="font-size:20px;flex-shrink:0;">&#128424;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Trigger Print (Ctrl+P)</div>
+              <div style="color:#64748b;font-size:13px;">Only now can printing begin — 4+ clicks away from start.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#fff5f5;border-radius:10px;border-left:4px solid #ef4444;">
+            <div style="font-size:20px;flex-shrink:0;">&#128274;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Sales Team Blocked</div>
+              <div style="color:#64748b;font-size:13px;">Printing customer invoices requires Accounting access rights.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#fff5f5;border-radius:10px;border-left:4px solid #ef4444;">
+            <div style="font-size:20px;flex-shrink:0;">&#9203;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Customers Wait Longer</div>
+              <div style="color:#64748b;font-size:13px;">No quick statement — customers wait for manual report generation.</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding:14px;background:#fef2f2;border-radius:10px;text-align:center;">
+          <span style="color:#b91c1c;font-weight:700;font-size:14px;">&#128306; Average: 5-7 clicks to print one document</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WITH card -->
+    <div style="flex:1;min-width:300px;background:#fff;border:2px solid #bbf7d0;border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(34,197,94,0.08);">
+      <div style="background:#f0fdf4;padding:20px 28px;border-bottom:2px solid #bbf7d0;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;background:#dcfce7;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;">&#9989;</div>
+          <div>
+            <div style="font-size:14px;font-weight:800;color:#15803d;text-transform:uppercase;letter-spacing:0.06em;">With COA Direct Print</div>
+            <div style="font-size:12px;color:#22c55e;">Streamlined one-click experience</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:28px;">
+        <div style="display:flex;flex-direction:column;gap:14px;">
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#f0fdf4;border-radius:10px;border-left:4px solid #22c55e;">
+            <div style="font-size:20px;flex-shrink:0;">&#128161;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Click the Print Button</div>
+              <div style="color:#64748b;font-size:13px;">One click on the dedicated print button in the document form.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#f0fdf4;border-radius:10px;border-left:4px solid #22c55e;">
+            <div style="font-size:20px;flex-shrink:0;">&#128195;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Browser Print Dialog Opens Instantly</div>
+              <div style="color:#64748b;font-size:13px;">Native browser print dialog appears immediately — no files saved.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#f0fdf4;border-radius:10px;border-left:4px solid #22c55e;">
+            <div style="font-size:20px;flex-shrink:0;">&#9989;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Confirm &amp; Print</div>
+              <div style="color:#64748b;font-size:13px;">Select printer and click print. Job done. Back to work in seconds.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#f0fdf4;border-radius:10px;border-left:4px solid #22c55e;">
+            <div style="font-size:20px;flex-shrink:0;">&#128275;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Sales Users Print Freely</div>
+              <div style="color:#64748b;font-size:13px;">No Accounting rights required. Sales team is fully self-sufficient.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#f0fdf4;border-radius:10px;border-left:4px solid #22c55e;">
+            <div style="font-size:20px;flex-shrink:0;">&#128202;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Customer Statements On Demand</div>
+              <div style="color:#64748b;font-size:13px;">Running-balance statement printable instantly from Partner or Invoice form.</div>
+            </div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:12px;padding:14px;background:#f0fdf4;border-radius:10px;border-left:4px solid #22c55e;">
+            <div style="font-size:20px;flex-shrink:0;">&#128187;</div>
+            <div>
+              <div style="font-weight:700;color:#1e293b;font-size:14px;">Works on All Modern Browsers</div>
+              <div style="color:#64748b;font-size:13px;">Chrome, Firefox, Edge, Safari — native print API, no plugins needed.</div>
+            </div>
+          </div>
+        </div>
+        <div style="margin-top:20px;padding:14px;background:#f0fdf4;border-radius:10px;text-align:center;">
+          <span style="color:#15803d;font-weight:700;font-size:14px;">&#128308; Just 1 click &rarr; Print Dialog. Done.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     SECTION 3 — 6 FEATURE PILLARS
+     ===================================================================== -->
+<div style="background:#fff;padding:72px 40px;">
+  <div style="text-align:center;margin-bottom:52px;">
+    <div style="display:inline-block;background:#eff6ff;border:1px solid #bfdbfe;border-radius:6px;padding:4px 14px;margin-bottom:14px;">
+      <span style="color:#1d4ed8;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Core Features</span>
+    </div>
+    <h2 style="color:#041F33;font-size:32px;font-weight:800;margin:0 0 12px 0;">Six Pillars of Printing Excellence</h2>
+    <p style="color:#64748b;font-size:16px;max-width:580px;margin:0 auto;">Every feature is purpose-built to close the gap between document creation and physical output.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:24px;max-width:1100px;margin:0 auto;">
+
+    <!-- Pillar 1 -->
+    <div style="flex:1;min-width:300px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;padding:32px;box-shadow:0 2px 16px rgba(4,31,51,0.06);transition:box-shadow 0.2s;">
+      <div style="width:52px;height:52px;background:linear-gradient(135deg,#041F33,#0F5586);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;">&#128196;</div>
+      <h3 style="color:#041F33;font-size:18px;font-weight:800;margin:0 0 10px 0;">Sale Order Direct Print</h3>
+      <p style="color:#64748b;font-size:14px;line-height:1.65;margin:0 0 16px 0;">A dedicated <strong>Print Order</strong> button on the Sale Order form opens the browser print dialog instantly. Sales reps can hand a printed order to customers without ever leaving Odoo or managing downloaded files.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="background:#eff6ff;color:#1d4ed8;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">SO Form Button</span>
+        <span style="background:#f0fdf4;color:#15803d;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">One-Click Print</span>
+        <span style="background:#fef9c3;color:#854d0e;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">No Download</span>
+      </div>
+    </div>
+
+    <!-- Pillar 2 -->
+    <div style="flex:1;min-width:300px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;padding:32px;box-shadow:0 2px 16px rgba(4,31,51,0.06);">
+      <div style="width:52px;height:52px;background:linear-gradient(135deg,#8C1D22,#E61B21);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;">&#129534;</div>
+      <h3 style="color:#041F33;font-size:18px;font-weight:800;margin:0 0 10px 0;">Customer Invoice Direct Print</h3>
+      <p style="color:#64748b;font-size:14px;line-height:1.65;margin:0 0 16px 0;">Print any customer invoice directly from the Invoice form with a single click. The button bypasses the download mechanism and routes the rendered QWeb report straight to the browser's native print engine.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="background:#fef2f2;color:#b91c1c;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Invoice Form</span>
+        <span style="background:#f0fdf4;color:#15803d;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Instant Dialog</span>
+        <span style="background:#eff6ff;color:#1d4ed8;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">QWeb Report</span>
+      </div>
+    </div>
+
+    <!-- Pillar 3 -->
+    <div style="flex:1;min-width:300px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;padding:32px;box-shadow:0 2px 16px rgba(4,31,51,0.06);">
+      <div style="width:52px;height:52px;background:linear-gradient(135deg,#0F5586,#6E93B0);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;">&#128202;</div>
+      <h3 style="color:#041F33;font-size:18px;font-weight:800;margin:0 0 10px 0;">Customer Account Statement</h3>
+      <p style="color:#64748b;font-size:14px;line-height:1.65;margin:0 0 16px 0;">A fully custom QWeb statement report showing all transactions for a customer with a running balance column. Printable from both the Partner form and the Invoice form. Professional layout ready for client meetings or collection calls.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="background:#f5f3ff;color:#6d28d9;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Running Balance</span>
+        <span style="background:#eff6ff;color:#1d4ed8;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Partner Form</span>
+        <span style="background:#fef9c3;color:#854d0e;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Invoice Form</span>
+      </div>
+    </div>
+
+    <!-- Pillar 4 -->
+    <div style="flex:1;min-width:300px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;padding:32px;box-shadow:0 2px 16px rgba(4,31,51,0.06);">
+      <div style="width:52px;height:52px;background:linear-gradient(135deg,#064e3b,#10b981);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;">&#128275;</div>
+      <h3 style="color:#041F33;font-size:18px;font-weight:800;margin:0 0 10px 0;">Cross-Role Printing</h3>
+      <p style="color:#64748b;font-size:14px;line-height:1.65;margin:0 0 16px 0;">Sales users who do not have access to the Accounting module can still print invoices and statements associated with their orders. No more workarounds, no need to add Accounting rights to the entire sales team.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="background:#f0fdf4;color:#15803d;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">No Accounting Rights</span>
+        <span style="background:#eff6ff;color:#1d4ed8;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Role-Based Access</span>
+      </div>
+    </div>
+
+    <!-- Pillar 5 -->
+    <div style="flex:1;min-width:300px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;padding:32px;box-shadow:0 2px 16px rgba(4,31,51,0.06);">
+      <div style="width:52px;height:52px;background:linear-gradient(135deg,#7c3aed,#a78bfa);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;">&#9881;</div>
+      <h3 style="color:#041F33;font-size:18px;font-weight:800;margin:0 0 10px 0;">Custom QWeb Statement with Running Balance</h3>
+      <p style="color:#64748b;font-size:14px;line-height:1.65;margin:0 0 16px 0;">The included QWeb template renders a professionally formatted Customer Account Statement with date, document reference, debit, credit, and a cumulative running balance column — exactly what accountants and customers need for reconciliation.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="background:#f5f3ff;color:#6d28d9;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">QWeb Template</span>
+        <span style="background:#fef9c3;color:#854d0e;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Debit / Credit</span>
+        <span style="background:#f0fdf4;color:#15803d;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Running Balance</span>
+      </div>
+    </div>
+
+    <!-- Pillar 6 -->
+    <div style="flex:1;min-width:300px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;padding:32px;box-shadow:0 2px 16px rgba(4,31,51,0.06);">
+      <div style="width:52px;height:52px;background:linear-gradient(135deg,#b45309,#fbbf24);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:26px;margin-bottom:20px;">&#127758;</div>
+      <h3 style="color:#041F33;font-size:18px;font-weight:800;margin:0 0 10px 0;">Community &amp; Enterprise Compatible</h3>
+      <p style="color:#64748b;font-size:14px;line-height:1.65;margin:0 0 16px 0;">Built to function identically on both Odoo Community and Odoo Enterprise editions across versions 17, 18, and 19. No edition-specific code paths — one module, full compatibility.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="background:#fef9c3;color:#854d0e;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">v17 · v18 · v19</span>
+        <span style="background:#eff6ff;color:#1d4ed8;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Community</span>
+        <span style="background:#f5f3ff;color:#6d28d9;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Enterprise</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- =====================================================================
+     SECTION 4 — WHERE PRINT BUTTONS APPEAR
+     ===================================================================== -->
+<div style="background:linear-gradient(135deg,#041F33 0%,#063153 100%);padding:72px 40px;">
+  <div style="text-align:center;margin-bottom:52px;">
+    <div style="display:inline-block;background:rgba(110,147,176,0.15);border:1px solid rgba(110,147,176,0.35);border-radius:6px;padding:4px 14px;margin-bottom:14px;">
+      <span style="color:#93c5fd;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Button Placement Guide</span>
+    </div>
+    <h2 style="color:#ffffff;font-size:32px;font-weight:800;margin:0 0 12px 0;">Where Print Buttons Appear</h2>
+    <p style="color:#94a3b8;font-size:16px;max-width:580px;margin:0 auto;">Print buttons are embedded directly into each document form so they are always one click away — no menus to navigate.</p>
+  </div>
+
+  <div style="display:flex;gap:24px;flex-wrap:wrap;max-width:1100px;margin:0 auto;">
+
+    <!-- Location 1: Sale Order Form -->
+    <div style="flex:1;min-width:290px;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.12);border-radius:18px;overflow:hidden;">
+      <div style="background:rgba(15,85,134,0.35);padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.10);">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:40px;height:40px;background:rgba(15,85,134,0.6);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">&#128196;</div>
+          <div>
+            <div style="color:#fff;font-weight:800;font-size:15px;">Sale Order Form</div>
+            <div style="color:#6E93B0;font-size:12px;">sales &rarr; order &rarr; form view</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:24px;">
+        <p style="color:#94a3b8;font-size:14px;line-height:1.6;margin:0 0 20px 0;">Three action buttons are injected into the Sale Order header button bar, covering every common printing scenario from a single screen.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+          <div style="background:rgba(15,85,134,0.25);border:1px solid rgba(15,85,134,0.5);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">&#128196;</span>
+            <div>
+              <div style="color:#93c5fd;font-weight:700;font-size:13px;">Print Order</div>
+              <div style="color:#64748b;font-size:12px;">Prints the Sale Order document directly</div>
+            </div>
+          </div>
+          <div style="background:rgba(15,85,134,0.25);border:1px solid rgba(15,85,134,0.5);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">&#129534;</span>
+            <div>
+              <div style="color:#93c5fd;font-weight:700;font-size:13px;">Print Invoice</div>
+              <div style="color:#64748b;font-size:12px;">Prints the linked invoice — no accounting access needed</div>
+            </div>
+          </div>
+          <div style="background:rgba(15,85,134,0.25);border:1px solid rgba(15,85,134,0.5);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">&#128202;</span>
+            <div>
+              <div style="color:#93c5fd;font-weight:700;font-size:13px;">Customer Statement</div>
+              <div style="color:#64748b;font-size:12px;">Prints the full account statement with running balance</div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.10);">
+          <img src="01_sale_order_print_buttons.png" alt="Sale Order Print Buttons" style="width:100%;display:block;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Location 2: Invoice Form -->
+    <div style="flex:1;min-width:290px;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.12);border-radius:18px;overflow:hidden;">
+      <div style="background:rgba(140,29,34,0.35);padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.10);">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:40px;height:40px;background:rgba(140,29,34,0.6);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">&#129534;</div>
+          <div>
+            <div style="color:#fff;font-weight:800;font-size:15px;">Invoice Form</div>
+            <div style="color:#fca5a5;font-size:12px;">accounting &rarr; invoice &rarr; form view</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:24px;">
+        <p style="color:#94a3b8;font-size:14px;line-height:1.6;margin:0 0 20px 0;">Two print buttons are added to the Invoice header, enabling accountants and sales users alike to print the invoice and the customer's full account statement from one place.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+          <div style="background:rgba(140,29,34,0.25);border:1px solid rgba(140,29,34,0.5);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">&#128424;</span>
+            <div>
+              <div style="color:#fca5a5;font-weight:700;font-size:13px;">Direct Print</div>
+              <div style="color:#64748b;font-size:12px;">Opens browser print dialog for this invoice</div>
+            </div>
+          </div>
+          <div style="background:rgba(140,29,34,0.25);border:1px solid rgba(140,29,34,0.5);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">&#128202;</span>
+            <div>
+              <div style="color:#fca5a5;font-weight:700;font-size:13px;">Customer Statement</div>
+              <div style="color:#64748b;font-size:12px;">Prints full statement for this customer</div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.10);">
+          <img src="02_invoice_print_button.png" alt="Invoice Print Button" style="width:100%;display:block;" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Location 3: Partner Form -->
+    <div style="flex:1;min-width:290px;background:rgba(255,255,255,0.05);border:1.5px solid rgba(255,255,255,0.12);border-radius:18px;overflow:hidden;">
+      <div style="background:rgba(110,147,176,0.25);padding:20px 24px;border-bottom:1px solid rgba(255,255,255,0.10);">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:40px;height:40px;background:rgba(110,147,176,0.45);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;">&#128100;</div>
+          <div>
+            <div style="color:#fff;font-weight:800;font-size:15px;">Partner Form</div>
+            <div style="color:#93c5fd;font-size:12px;">contacts &rarr; customer &rarr; form view</div>
+          </div>
+        </div>
+      </div>
+      <div style="padding:24px;">
+        <p style="color:#94a3b8;font-size:14px;line-height:1.6;margin:0 0 20px 0;">A Customer Statement button on the Partner (Contact) form allows printing the account statement for any customer at any time — ideal for collection review meetings and credit checks.</p>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:20px;">
+          <div style="background:rgba(110,147,176,0.20);border:1px solid rgba(110,147,176,0.4);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:16px;">&#128202;</span>
+            <div>
+              <div style="color:#93c5fd;font-weight:700;font-size:13px;">Customer Statement</div>
+              <div style="color:#64748b;font-size:12px;">Full running-balance statement for this contact</div>
+            </div>
+          </div>
+        </div>
+        <div style="border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.10);">
+          <img src="03_customer_statement.png" alt="Customer Statement from Partner" style="width:100%;display:block;" />
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- =====================================================================
+     SECTION 5 — LIVE SCREENSHOTS SHOWCASE
+     ===================================================================== -->
+<div style="background:#f8fafc;padding:72px 40px;">
+  <div style="text-align:center;margin-bottom:52px;">
+    <div style="display:inline-block;background:#fef9c3;border:1px solid #fde68a;border-radius:6px;padding:4px 14px;margin-bottom:14px;">
+      <span style="color:#92400e;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Live Screenshots</span>
+    </div>
+    <h2 style="color:#041F33;font-size:32px;font-weight:800;margin:0 0 12px 0;">See It in Action</h2>
+    <p style="color:#64748b;font-size:16px;max-width:540px;margin:0 auto;">Real screenshots from a live Odoo instance showing every print button and the resulting dialog experience.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:28px;max-width:1100px;margin:0 auto;">
+
+    <!-- Screenshot 1 -->
+    <div style="flex:1;min-width:460px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(4,31,51,0.07);">
+      <div style="padding:24px 28px 18px 28px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+          <h3 style="color:#041F33;font-size:17px;font-weight:800;margin:0;">Sale Order — Print Buttons</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:#eff6ff;color:#1d4ed8;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">SO Form</span>
+            <span style="background:#f0fdf4;color:#15803d;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">3 Buttons</span>
+          </div>
+        </div>
+        <p style="color:#64748b;font-size:13px;line-height:1.6;margin:0;">Three dedicated print buttons visible in the Sale Order button bar: Print Order, Print Invoice, and Customer Statement — all launching the browser print dialog directly.</p>
+      </div>
+      <div style="border-top:1px solid #f1f5f9;background:#f8fafc;">
+        <img src="01_sale_order_print_buttons.png" alt="Sale Order Print Buttons Screenshot" style="width:100%;display:block;" />
+      </div>
+    </div>
+
+    <!-- Screenshot 2 -->
+    <div style="flex:1;min-width:460px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(4,31,51,0.07);">
+      <div style="padding:24px 28px 18px 28px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+          <h3 style="color:#041F33;font-size:17px;font-weight:800;margin:0;">Invoice Form — Direct Print Button</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:#fef2f2;color:#b91c1c;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Invoice Form</span>
+            <span style="background:#f0fdf4;color:#15803d;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Instant Print</span>
+          </div>
+        </div>
+        <p style="color:#64748b;font-size:13px;line-height:1.6;margin:0;">The Direct Print and Customer Statement buttons on the Invoice form provide one-click access to printing from accounting — ideal for both accountants and sales users with appropriate access.</p>
+      </div>
+      <div style="border-top:1px solid #f1f5f9;background:#f8fafc;">
+        <img src="02_invoice_print_button.png" alt="Invoice Direct Print Button Screenshot" style="width:100%;display:block;" />
+      </div>
+    </div>
+
+    <!-- Screenshot 3 -->
+    <div style="flex:1;min-width:460px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(4,31,51,0.07);">
+      <div style="padding:24px 28px 18px 28px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+          <h3 style="color:#041F33;font-size:17px;font-weight:800;margin:0;">Customer Account Statement</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:#f5f3ff;color:#6d28d9;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">QWeb Report</span>
+            <span style="background:#fef9c3;color:#854d0e;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Running Balance</span>
+          </div>
+        </div>
+        <p style="color:#64748b;font-size:13px;line-height:1.6;margin:0;">The custom QWeb Customer Account Statement report rendered in the browser, showing date, reference, debit, credit and running balance columns. Professional, clean, and print-ready.</p>
+      </div>
+      <div style="border-top:1px solid #f1f5f9;background:#f8fafc;">
+        <img src="03_customer_statement.png" alt="Customer Statement Report Screenshot" style="width:100%;display:block;" />
+      </div>
+    </div>
+
+    <!-- Screenshot 4 -->
+    <div style="flex:1;min-width:460px;background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(4,31,51,0.07);">
+      <div style="padding:24px 28px 18px 28px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;margin-bottom:10px;">
+          <h3 style="color:#041F33;font-size:17px;font-weight:800;margin:0;">Browser Print Dialog</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;">
+            <span style="background:#f0fdf4;color:#15803d;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">Native Dialog</span>
+            <span style="background:#eff6ff;color:#1d4ed8;border-radius:20px;padding:4px 12px;font-size:12px;font-weight:600;">All Browsers</span>
+          </div>
+        </div>
+        <p style="color:#64748b;font-size:13px;line-height:1.6;margin:0;">The native browser print dialog opens immediately after clicking any of the print buttons — allowing printer selection, page orientation, and print preview before sending to the printer.</p>
+      </div>
+      <div style="border-top:1px solid #f1f5f9;background:#f8fafc;">
+        <img src="04_print_dialog.png" alt="Browser Print Dialog Screenshot" style="width:100%;display:block;" />
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- =====================================================================
+     SECTION 6 — TECHNICAL SPECS TABLE
+     ===================================================================== -->
+<div style="background:#fff;padding:72px 40px;">
+  <div style="text-align:center;margin-bottom:52px;">
+    <div style="display:inline-block;background:#f1f5f9;border:1px solid #cbd5e1;border-radius:6px;padding:4px 14px;margin-bottom:14px;">
+      <span style="color:#475569;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">Technical Reference</span>
+    </div>
+    <h2 style="color:#041F33;font-size:32px;font-weight:800;margin:0 0 12px 0;">Module Specifications</h2>
+    <p style="color:#64748b;font-size:16px;max-width:500px;margin:0 auto;">Everything your IT team and Odoo administrator needs to evaluate, install, and support this module.</p>
+  </div>
+
+  <div style="max-width:860px;margin:0 auto;">
+    <div style="background:#fff;border:1.5px solid #e2e8f0;border-radius:18px;overflow:hidden;box-shadow:0 4px 24px rgba(4,31,51,0.06);">
+      <!-- Table header -->
+      <div style="background:linear-gradient(90deg,#041F33,#063153);padding:18px 32px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+          <div style="width:36px;height:36px;background:rgba(255,255,255,0.12);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:18px;">&#9881;</div>
+          <span style="color:#fff;font-size:16px;font-weight:800;">coa_direct_print — Technical Manifest</span>
+        </div>
+      </div>
+      <!-- Table rows -->
+      <table style="width:100%;border-collapse:collapse;">
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:18px 32px;background:#f8fafc;font-weight:700;color:#374151;font-size:14px;width:220px;vertical-align:top;">Module Name</td>
+          <td style="padding:18px 32px;color:#1e293b;font-size:14px;">COA Direct Print - SO, Invoices &amp; Customer Statement</td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:18px 32px;background:#f8fafc;font-weight:700;color:#374151;font-size:14px;vertical-align:top;">Technical ID</td>
+          <td style="padding:18px 32px;vertical-align:top;">
+            <code style="background:#f1f5f9;color:#0F5586;border:1px solid #e2e8f0;border-radius:6px;padding:4px 10px;font-size:13px;font-family:monospace;">coa_direct_print</code>
+          </td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:18px 32px;background:#f8fafc;font-weight:700;color:#374151;font-size:14px;vertical-align:top;">Odoo Versions</td>
+          <td style="padding:18px 32px;vertical-align:top;">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <span style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:20px;padding:5px 14px;font-size:13px;font-weight:700;">17.0</span>
+              <span style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:20px;padding:5px 14px;font-size:13px;font-weight:700;">18.0</span>
+              <span style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:20px;padding:5px 14px;font-size:13px;font-weight:700;">19.0</span>
+            </div>
+          </td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:18px 32px;background:#f8fafc;font-weight:700;color:#374151;font-size:14px;vertical-align:top;">Editions</td>
+          <td style="padding:18px 32px;vertical-align:top;">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <span style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;border-radius:20px;padding:5px 14px;font-size:13px;font-weight:700;">&#10003; Community</span>
+              <span style="background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;border-radius:20px;padding:5px 14px;font-size:13px;font-weight:700;">&#10003; Enterprise</span>
+            </div>
+          </td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:18px 32px;background:#f8fafc;font-weight:700;color:#374151;font-size:14px;vertical-align:top;">Dependencies</td>
+          <td style="padding:18px 32px;vertical-align:top;">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <code style="background:#f1f5f9;color:#374151;border:1px solid #e2e8f0;border-radius:6px;padding:4px 10px;font-size:13px;font-family:monospace;">sale</code>
+              <code style="background:#f1f5f9;color:#374151;border:1px solid #e2e8f0;border-radius:6px;padding:4px 10px;font-size:13px;font-family:monospace;">account</code>
+            </div>
+          </td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:18px 32px;background:#f8fafc;font-weight:700;color:#374151;font-size:14px;vertical-align:top;">License</td>
+          <td style="padding:18px 32px;vertical-align:top;">
+            <span style="background:#fef9c3;color:#854d0e;border:1px solid #fde68a;border-radius:6px;padding:5px 12px;font-size:13px;font-weight:700;">OPL-1 (Odoo Proprietary License v1)</span>
+          </td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:18px 32px;background:#f8fafc;font-weight:700;color:#374151;font-size:14px;vertical-align:top;">Languages</td>
+          <td style="padding:18px 32px;vertical-align:top;">
+            <div style="display:flex;gap:8px;flex-wrap:wrap;">
+              <span style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0;border-radius:20px;padding:5px 14px;font-size:13px;font-weight:600;">&#127468;&#127463; English</span>
+              <span style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe;border-radius:20px;padding:5px 14px;font-size:13px;font-weight:600;">&#127462;&#127466; Arabic (العربية)</span>
+            </div>
+          </td>
+        </tr>
+        <tr style="border-bottom:1px solid #f1f5f9;">
+          <td style="padding:18px 32px;background:#f8fafc;font-weight:700;color:#374151;font-size:14px;vertical-align:top;">Author</td>
+          <td style="padding:18px 32px;color:#1e293b;font-size:14px;vertical-align:top;">
+            <strong>Community of Accountants (COA-Egypt)</strong><br>
+            <span style="color:#64748b;font-size:13px;">Professional Odoo addon development for accounting &amp; sales automation</span>
+          </td>
+        </tr>
+        <tr>
+          <td style="padding:18px 32px;background:#f8fafc;font-weight:700;color:#374151;font-size:14px;vertical-align:top;">Website</td>
+          <td style="padding:18px 32px;vertical-align:top;">
+            <a href="https://www.coa-egy.com" style="color:#0F5586;font-weight:600;font-size:14px;text-decoration:none;">https://www.coa-egy.com</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Installation note -->
+    <div style="margin-top:28px;background:#f0f9ff;border:1.5px solid #bae6fd;border-radius:14px;padding:24px 28px;">
+      <div style="display:flex;align-items:flex-start;gap:14px;">
+        <div style="font-size:22px;flex-shrink:0;">&#128161;</div>
+        <div>
+          <div style="font-weight:700;color:#0c4a6e;font-size:15px;margin-bottom:6px;">Installation Requirements</div>
+          <p style="color:#0369a1;font-size:14px;line-height:1.6;margin:0;">This module requires the <code style="background:#e0f2fe;padding:2px 7px;border-radius:4px;">sale</code> and <code style="background:#e0f2fe;padding:2px 7px;border-radius:4px;">account</code> core modules to be installed. No third-party dependencies. Compatible with Odoo.sh, on-premise, and cloud deployments. Install via the Apps menu by searching for <strong>coa_direct_print</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =====================================================================
+     SECTION 7 — FAQ
+     ===================================================================== -->
+<div style="background:#f8fafc;padding:72px 40px;">
+  <div style="text-align:center;margin-bottom:52px;">
+    <div style="display:inline-block;background:#ecfdf5;border:1px solid #a7f3d0;border-radius:6px;padding:4px 14px;margin-bottom:14px;">
+      <span style="color:#065f46;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">FAQ</span>
+    </div>
+    <h2 style="color:#041F33;font-size:32px;font-weight:800;margin:0 0 12px 0;">Frequently Asked Questions</h2>
+    <p style="color:#64748b;font-size:16px;max-width:500px;margin:0 auto;">Answers to the most common questions we receive about COA Direct Print.</p>
+  </div>
+
+  <div style="max-width:820px;margin:0 auto;display:flex;flex-direction:column;gap:16px;">
+
+    <!-- FAQ 1 -->
+    <div style="background:#fff;border:1.5px solid #e2e8f0;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(4,31,51,0.05);">
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:40px;height:40px;min-width:40px;background:linear-gradient(135deg,#041F33,#0F5586);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;flex-shrink:0;">Q</div>
+        <div>
+          <div style="font-weight:800;color:#041F33;font-size:16px;margin-bottom:10px;">Do sales users need Accounting access to print invoices?</div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div style="width:36px;height:36px;min-width:36px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#15803d;font-weight:800;font-size:14px;flex-shrink:0;">A</div>
+            <p style="color:#475569;font-size:14px;line-height:1.65;margin:0;"><strong style="color:#15803d;">No, they do not.</strong> COA Direct Print is specifically designed to allow Sales users to print customer invoices and account statements without requiring any Accounting module access rights. The print action uses a dedicated controller that respects the Sales user role, so your accounting data remains protected while your sales team gains full printing autonomy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 2 -->
+    <div style="background:#fff;border:1.5px solid #e2e8f0;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(4,31,51,0.05);">
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:40px;height:40px;min-width:40px;background:linear-gradient(135deg,#041F33,#0F5586);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;flex-shrink:0;">Q</div>
+        <div>
+          <div style="font-weight:800;color:#041F33;font-size:16px;margin-bottom:10px;">Does it work on all browsers?</div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div style="width:36px;height:36px;min-width:36px;background:#f0fdf4;border:1.5px solid #bbf7d0;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#15803d;font-weight:800;font-size:14px;flex-shrink:0;">A</div>
+            <p style="color:#475569;font-size:14px;line-height:1.65;margin:0;"><strong style="color:#15803d;">Yes, all modern browsers are supported.</strong> COA Direct Print uses the browser's native <code style="background:#f1f5f9;padding:2px 7px;border-radius:4px;font-size:13px;">window.print()</code> API, which is universally supported in Google Chrome, Mozilla Firefox, Microsoft Edge, Apple Safari, and their Chromium-based derivatives. No browser plugins, extensions, or additional software are required. The print dialog appearance may vary slightly per browser — this is normal behavior.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ 3 -->
+    <div style="background:#fff;border:1.5px solid #e2e8f0;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(4,31,51,0.05);">
+      <div style="padding:24px 28px;display:flex;align-items:flex-start;gap:16px;">
+        <div style="width:40px;height:40px;min-width:40px;background:linear-gradient(135deg,#041F33,#0F5586);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:16px;flex-shrink:0;">Q</div>
+        <div>
+          <div style="font-weight:800;color:#041F33;font-size:16px;margin-bottom:10px;">Can I print multiple invoices at once?</div>
+          <div style="display:flex;align-items:flex-start;gap:12px;">
+            <div style="width:36px;height:36px;min-width:36px;background:#fef9c3;border:1.5px solid #fde68a;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#854d0e;font-weight:800;font-size:14px;flex-shrink:0;">A</div>
+            <p style="color:#475569;font-size:14px;line-height:1.65;margin:0;"><strong style="color:#854d0e;">The current version prints one document at a time</strong> from the document's own form view. Each print action opens a single document in the browser print dialog. For batch printing, we recommend using Odoo's standard list view export or a complementary batch-print module. The Customer Account Statement, however, consolidates all transactions for a given customer into a single printable document, which effectively covers the most common batch-print use case in accounting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- =====================================================================
+     SECTION 8 — FOOTER CTA
+     ===================================================================== -->
+<div style="background:linear-gradient(135deg,#041F33 0%,#063153 55%,#0F5586 100%);padding:72px 40px;position:relative;overflow:hidden;">
+
+  <!-- Decorative elements -->
+  <div style="position:absolute;top:-100px;right:-100px;width:380px;height:380px;background:rgba(15,85,134,0.18);border-radius:50%;pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-60px;left:-60px;width:280px;height:280px;background:rgba(140,29,34,0.12);border-radius:50%;pointer-events:none;"></div>
+
+  <div style="max-width:820px;margin:0 auto;text-align:center;position:relative;">
+
+    <!-- Logo + brand -->
+    <div style="display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:28px;">
+      <img src="coa_logo.jpg" alt="COA Logo" style="height:64px;width:64px;object-fit:contain;border-radius:50%;background:#fff;padding:6px;border:3px solid rgba(255,255,255,0.25);" />
+      <div style="text-align:left;">
+        <div style="color:#fff;font-size:18px;font-weight:800;line-height:1.2;">Community of Accountants</div>
+        <div style="color:#6E93B0;font-size:13px;font-weight:600;">COA-Egypt · Odoo Module Publisher</div>
+      </div>
+    </div>
+
+    <!-- Main CTA headline -->
+    <h2 style="color:#ffffff;font-size:38px;font-weight:800;margin:0 0 16px 0;line-height:1.2;">
+      Ready to Eliminate Print Friction?
+    </h2>
+    <p style="color:#94a3b8;font-size:16px;margin:0 0 40px 0;max-width:560px;margin-left:auto;margin-right:auto;line-height:1.65;">
+      Install COA Direct Print today and give your team the one-click printing experience they deserve.
+      Available on the Odoo App Store for versions 17, 18, and 19.
+    </p>
+
+    <!-- CTA buttons row -->
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:52px;">
+      <a href="https://www.coa-egy.com" style="background:linear-gradient(135deg,#8C1D22,#E61B21);color:#fff;padding:16px 36px;border-radius:50px;font-weight:800;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;box-shadow:0 4px 20px rgba(230,27,33,0.35);">
+        <span>&#128279;</span> Visit COA Website
+      </a>
+      <a href="mailto:info@coa-egy.com" style="background:rgba(255,255,255,0.10);border:2px solid rgba(255,255,255,0.25);color:#fff;padding:16px 36px;border-radius:50px;font-weight:800;font-size:15px;text-decoration:none;display:inline-flex;align-items:center;gap:10px;">
+        <span>&#128231;</span> Email Support
+      </a>
+    </div>
+
+    <!-- Divider -->
+    <div style="border-top:1px solid rgba(255,255,255,0.10);padding-top:32px;">
+
+      <!-- Contact details -->
+      <div style="display:flex;gap:32px;justify-content:center;flex-wrap:wrap;margin-bottom:24px;">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;">&#128231;</div>
+          <div style="text-align:left;">
+            <div style="color:#6E93B0;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Support Email</div>
+            <a href="mailto:info@coa-egy.com" style="color:#93c5fd;font-size:14px;font-weight:700;text-decoration:none;">info@coa-egy.com</a>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;">&#127758;</div>
+          <div style="text-align:left;">
+            <div style="color:#6E93B0;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">Website</div>
+            <a href="https://www.coa-egy.com" style="color:#93c5fd;font-size:14px;font-weight:700;text-decoration:none;">https://www.coa-egy.com</a>
+          </div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <div style="width:36px;height:36px;background:rgba(255,255,255,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:16px;">&#128274;</div>
+          <div style="text-align:left;">
+            <div style="color:#6E93B0;font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">License</div>
+            <span style="color:#fbbf24;font-size:14px;font-weight:700;">OPL-1</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright -->
+      <p style="color:#334155;font-size:13px;margin:0;">&copy; 2024 Community of Accountants (COA-Egypt). All rights reserved.<br>
+      <span style="color:#475569;">COA Direct Print is distributed under the Odoo Proprietary License v1 (OPL-1).</span></p>
+    </div>
+
+  </div>
+</div>
+
+</div>'''
+
+with open(OUTPUT, 'w', encoding='utf-8') as f:
+    f.write(HTML)
+
+print(f'Written: {OUTPUT}')
+print(f'Size: {os.path.getsize(OUTPUT):,} bytes')
+
+# Verify no BOM
+with open(OUTPUT, 'rb') as f:
+    first3 = f.read(3)
+    if first3 == b'\xef\xbb\xbf':
+        print('ERROR: BOM detected!')
+    else:
+        print('OK: No BOM detected.')
+
+# Print first 5 lines
+with open(OUTPUT, 'r', encoding='utf-8') as f:
+    lines = f.readlines()
+    print(f'Total lines: {len(lines)}')
+    print('--- First 5 lines ---')
+    for i, line in enumerate(lines[:5], 1):
+        print(f'{i}: {repr(line[:120])}')

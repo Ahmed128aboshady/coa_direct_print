@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_report_payment_receipt" model="ir.actions.report">
+        <field name="name">Payment Receipt / إيصال دفع</field>
+        <field name="model">account.payment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">coa_direct_print.report_payment_receipt</field>
+        <field name="report_file">coa_direct_print.report_payment_receipt</field>
+        <field name="print_report_name">'Receipt - %s' % (object.name or '')</field>
+        <field name="binding_model_id" ref="account.model_account_payment"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

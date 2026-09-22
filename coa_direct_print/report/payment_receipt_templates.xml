@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_payment_receipt">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <div class="page" style="direction:rtl; font-family: 'Cairo', Arial, sans-serif;">
+
+                        <!-- Title -->
+                        <h2 class="text-center mb-4" style="border-bottom: 2px solid #3b82f6; padding-bottom: 8px;">
+                            <t t-if="doc.payment_type == 'inbound'">
+                                إيصال قبض &amp;nbsp;/&amp;nbsp; Payment Receipt
+                            </t>
+                            <t t-else="">
+                                إيصال صرف &amp;nbsp;/&amp;nbsp; Payment Voucher
+                            </t>
+                        </h2>
+
+                        <!-- Payment info grid -->
+                        <div class="row mb-4">
+                            <div class="col-7">
+                                <table class="table table-borderless table-sm" style="font-size:13px;">
+                                    <tr>
+                                        <td style="width:38%; font-weight:bold;">الرقم المرجعي / Ref.</td>
+                                        <td><span t-esc="doc.name"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:bold;">التاريخ / Date</td>
+                                        <td>
+                                            <span t-esc="doc.date"
+                                                  t-options='{"widget":"date"}'/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:bold;">
+                                            <t t-if="doc.payment_type == 'inbound'">
+                                                المستلم من / Received From
+                                            </t>
+                                            <t t-else="">
+                                                مدفوع إلى / Paid To
+                                            </t>
+                                        </td>
+                                        <td><span t-esc="doc.partner_id.name"/></td>
+                                    </tr>
+                                    <tr>
+                                        <td style="font-weight:bold;">طريقة الدفع / Method</td>
+                                        <td><span t-esc="doc.journal_id.name"/></td>
+                                    </tr>
+                                    <t t-if="doc.memo">
+                                        <tr>
+                                            <td style="font-weight:bold;">البيان / Memo</td>
+                                            <td><span t-esc="doc.memo"/></td>
+                                        </tr>
+                                    </t>
+                                </table>
+                            </div>
+
+                            <!-- Amount box -->
+                            <div class="col-5 text-center">
+                                <div style="border: 2px solid #1f2937; border-radius: 10px; padding: 20px; background: #f8f9fa;">
+                                    <div style="font-size:12px; color:#666; margin-bottom:6px;">
+                                        المبلغ / Amount
+                                    </div>
+                                    <div style="font-size:26px; font-weight:bold; color:#1f2937;">
+                                        <span t-esc="doc.amount"
+                                              t-options='{"widget":"monetary","display_currency":doc.currency_id}'/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Balance before / after -->
+                        <div class="row mb-4">
+                            <div class="col-12">
+                                <table style="width:100%; border-collapse:collapse; font-size:13px;">
+                                    <tr>
+                                        <td style="border:1px solid #cbd5e1; padding:10px 14px; width:60%; font-weight:bold; color:#1e3a5f !important; background-color:#eef4ff !important;">
+                                            الرصيد قبل الدفعة
+                                            <span style="font-weight:normal; color:#6b7280; font-size:11px;"> / Balance Before</span>
+                                        </td>
+                                        <td style="border:1px solid #cbd5e1; padding:10px 14px; text-align:right; font-size:15px; font-weight:bold; color:#1e3a5f !important; background-color:#ffffff !important;">
+                                            <span t-esc="doc.coa_balance_before"
+                                                  t-options='{"widget":"monetary","display_currency":doc.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:1px solid #cbd5e1; padding:10px 14px; font-weight:bold; color:#065f46 !important; background-color:#d1fae5 !important;">
+                                            مبلغ الدفعة
+                                            <span style="font-weight:normal; color:#6b7280; font-size:11px;"> / Payment Amount</span>
+                                        </td>
+                                        <td style="border:1px solid #cbd5e1; padding:10px 14px; text-align:right; font-size:15px; font-weight:bold; color:#059669 !important; background-color:#ffffff !important;">
+                                            <span t-esc="doc.amount"
+                                                  t-options='{"widget":"monetary","display_currency":doc.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="border:1px solid #cbd5e1; padding:10px 14px; font-weight:bold; color:#1e3a5f !important; background-color:#eef4ff !important;">
+                                            الرصيد بعد الدفعة
+                                            <span style="font-weight:normal; color:#6b7280; font-size:11px;"> / Balance After</span>
+                                        </td>
+                                        <td style="border:1px solid #cbd5e1; padding:10px 14px; text-align:right; font-size:15px; font-weight:bold; color:#1e3a5f !important; background-color:#ffffff !important;">
+                                            <span t-esc="doc.coa_balance_after"
+                                                  t-options='{"widget":"monetary","display_currency":doc.currency_id}'/>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+                        <!-- Signature lines -->
+                        <div class="row mt-5">
+                            <div class="col-4 text-center">
+                                <p style="font-size:12px; margin-bottom:40px;">
+                                    <t t-if="doc.payment_type == 'inbound'">
+                                        توقيع العميل<br/><small>Customer Signature</small>
+                                    </t>
+                                    <t t-else="">
+                                        توقيع المورد<br/><small>Vendor Signature</small>
+                                    </t>
+                                </p>
+                                <p>________________________</p>
+                            </div>
+                            <div class="col-4 text-center">
+                                <p style="font-size:12px; margin-bottom:40px;">
+                                    المحاسب<br/><small>Accountant</small>
+                                </p>
+                                <p>________________________</p>
+                            </div>
+                            <div class="col-4 text-center">
+                                <p style="font-size:12px; margin-bottom:40px;">
+                                    المدير المالي<br/><small>Finance Manager</small>
+                                </p>
+                                <p>________________________</p>
+                            </div>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+            <!-- Auto-trigger print dialog when opened via /report/html/ -->
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    if (window.location.pathname.indexOf('/report/html/') !== -1) {
+                        setTimeout(function () { window.print(); }, 500);
+                    }
+                });
+            </script>
+        </t>
+    </template>
+
+</odoo>

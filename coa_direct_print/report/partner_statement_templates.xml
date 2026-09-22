@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_partner_statement">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="web.external_layout">
+                    <t t-set="stmt" t-value="statements[doc.id]"/>
+                    <div class="page">
+
+                        <h3 class="text-center mb-3">
+                            كشف حساب عميل / Customer Statement
+                        </h3>
+
+                        <div class="row mb-3">
+                            <div class="col-6">
+                                <strong>العميل / Customer: </strong>
+                                <span t-esc="doc.name"/>
+                                <strong t-if="doc.ref">
+                                    [<span t-esc="doc.ref"/>]
+                                </strong>
+                                <br/>
+                                <span t-if="doc.vat">
+                                    <strong>الرقم الضريبي / VAT: </strong>
+                                    <span t-esc="doc.vat"/>
+                                </span>
+                            </div>
+                            <div class="col-6 text-end">
+                                <strong>تاريخ الطباعة / Date: </strong>
+                                <span t-esc="context_timestamp(datetime.datetime.now()).strftime('%d/%m/%Y %H:%M')"/>
+                            </div>
+                        </div>
+
+                        <table class="table table-sm table-bordered">
+                            <thead style="background-color:#f0f0f0;">
+                                <tr>
+                                    <th>التاريخ<br/>Date</th>
+                                    <th>المستند<br/>Document</th>
+                                    <th>البيان<br/>Label</th>
+                                    <th>الاستحقاق<br/>Due Date</th>
+                                    <th class="text-end">مدين<br/>Debit</th>
+                                    <th class="text-end">دائن<br/>Credit</th>
+                                    <th class="text-end">الرصيد<br/>Balance</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="stmt['lines']" t-as="line">
+                                    <td><span t-esc="line['date'].strftime('%d/%m/%Y') if line['date'] else ''"/></td>
+                                    <td><span t-esc="line['move_name']"/></td>
+                                    <td><span t-esc="line['label']"/></td>
+                                    <td><span t-esc="line['due_date'].strftime('%d/%m/%Y') if line['due_date'] else ''"/></td>
+                                    <td class="text-end">
+                                        <span t-esc="line['debit']"
+                                              t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-esc="line['credit']"
+                                              t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-esc="line['balance']"
+                                              t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                    </td>
+                                </tr>
+                                <tr t-if="not stmt['lines']">
+                                    <td colspan="7" class="text-center">
+                                        لا توجد حركات / No transactions
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr style="background-color:#f0f0f0; font-weight:bold;">
+                                    <td colspan="4" class="text-end">
+                                        الإجمالي / Total
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-esc="stmt['total_debit']"
+                                              t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-esc="stmt['total_credit']"
+                                              t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                    </td>
+                                    <td class="text-end">
+                                        <span t-esc="stmt['balance']"
+                                              t-options='{"widget": "monetary", "display_currency": currency}'/>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+
+                        <div class="mt-3 text-end">
+                            <strong style="font-size:1.1em;">
+                                الرصيد المستحق / Balance Due:
+                                <span t-esc="stmt['balance']"
+                                      t-options='{"widget": "monetary", "display_currency": currency}'/>
+                            </strong>
+                        </div>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
